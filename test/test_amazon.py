@@ -1,7 +1,6 @@
 import unittest
 from selenium import webdriver
 
-
 class test_amazon(unittest.TestCase):
     """
     1. Go to given site.
