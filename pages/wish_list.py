@@ -1,5 +1,10 @@
+import unittest
+from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from AmazonProject.base import BaseClass  # Thanks to this importing process, I can benefit from the methods defined in BaseClass.
+import time
+from base.base_page import BaseClass
 
 class AmazonWishlist:
     """Website login page for users to logging in"""

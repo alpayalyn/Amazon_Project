@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
-from AmazonProject.base import BaseClass
-
+from base.base_page import BaseClass
 
 class AmazonHome:
     """  The class lands on the HomePage - validates its actually on the Homepage & directs you to Login Page. """

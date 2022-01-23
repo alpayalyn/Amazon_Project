@@ -1,6 +1,10 @@
+import unittest
+from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from AmazonProject.base import BaseClass
-
+import time
+from base.base_page import BaseClass
 
 class AmazonProduct:
     """Website product page for adding the item to your WishList"""
