@@ -12,6 +12,10 @@ class AmazonWishlist:
     DELETE_BUTTON = (By.XPATH, "//span/span/input[@class='a-button-input a-declarative']")
     WISH_LIST_LINK = (By.ID, "WLHUC_result_listName")
     listpages4 = []
+    listpages5 = []
+    listpages6 = []
+    texttt = 0
+    textttt = 0
 
     def __init__(self, driver):
         self.driver = driver
@@ -21,5 +25,13 @@ class AmazonWishlist:
         texts = self.driver.find_elements(*self.DELETE_BUTTON)
         for texts3 in texts:
             self.listpages4.append(texts3)
+            self.listpages5.append(texts3.text)
         self.listpages4[1].click()
         time.sleep(10)
+
+    def deleting_validation(self):
+        for texts3 in texts:
+            self.listpages4.append(texts3)
+            self.listpages6.append(texts3.text)
+        assert not self.listpages4[1] == self.listpages6[1]
+        print("Item was successfully deleted.")
