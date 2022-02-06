@@ -34,11 +34,11 @@ class TestRun(unittest.TestCase, Setup):
         AmazonCategory(self.driver).clicking_the_third_item()
         AmazonProduct(self.driver).adding_product()
         AmazonWishlist(self.driver).deleting_the_product()
-        AmazonWishlist(self.driver).deleting_validation()
 
     def tearDown(self):
         # To do the cleanup after test has executed.
         self.driver.close()
+
 
 
 if __name__ == '__main__':

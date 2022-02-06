@@ -4,7 +4,7 @@ from base.base_page import BaseClass
 class AmazonLogin:
     """Website login page for users to logging in"""
     email = 'alpaylui78@gmail.com'
-    password = '---'
+    password = 'asd123asd'
     EMAIL = (By.ID, 'ap_email')
     PASS_EMAIL = (By.ID, 'continue')
     PASSWORD = (By.ID, 'ap_password')
