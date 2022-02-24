@@ -1,30 +1,33 @@
-import unittest
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-import time
 from base.base_page import BaseClass
 
+
 class AmazonWishlist:
-    """Website login page for users to logging in"""
-    DELETE_BUTTON = (By.NAME, "submit.deleteItem")[0]
-    PRODUCT_LIST = []
-    ITEMS_LIST = (By.XPATH, "//h2/a[@class='a-link-normal']") # Items listed in the wishlist
-    CHOSEN_PRODUCT_NAME_WISHLIST_NAME = (By.XPATH, "//h2/a[@class='a-link-normal']")[0]
+    """
+        Get the text of recently added item into the Shopping List.
+        Deleting recently added item from the Shopping List.
+        After deleting the item, getting 'Undo' text for assertion.
+
+    """
+    DELETE_BUTTON = (By.NAME, "submit.deleteItem")
+    DELETED_ITEM_TEXT = (By.CSS_SELECTOR, "span[id='undo-delete']")
+    CHOSEN_PRODUCT_NAME_WISHLIST_NAME = (By.XPATH, "//h2/a[@class='a-link-normal']")
 
     def __init__(self, driver):
         self.driver = driver
-        self.methods = BaseClass(self.driver)  # Self driver is being sent, because YOU NEED it. It cant benefit from the driver definition which is in BaseClass?
+        self.methods = BaseClass(self.driver)
+
+    def getting_the_product_name_text(self):
+        """Get the text of recently added item into the Shopping List."""
+
+        self.methods.get_text(self.CHOSEN_PRODUCT_NAME_WISHLIST_NAME, 0)
 
     def deleting_the_product(self):
-        self.methods.wait_for_element(self.DELETE_BUTTON).click()
+        """Deleting recently added item from the Shopping List."""
 
-    def deleting_validation(self):
-        self.PRODUCT_LIST = self.methods.wait_for_element(self.ITEMS_LIST).text
-        for product in self.PRODUCT_LIST:
-            if product == self.methods.wait_for_element(self.CHOSEN_PRODUCT_NAME_WISHLIST_NAME):
-                assert False, "Product couldn't be deleted"
-        assert True
+        self.methods.click_the_element(self.DELETE_BUTTON, 0)
 
+    def getting_the_text_after_delete(self):
+        """After deleting the item, getting 'Undo' text for assertion."""
 
+        return self.methods.get_text(self.DELETED_ITEM_TEXT, 0)

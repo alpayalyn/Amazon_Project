@@ -1,20 +1,33 @@
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-import time
+
 
 class BaseClass(object):
-    """Base class to initialize the base page that will be called from all pages"""
+    """
+        Functions in the Base page will be called by other pages to perform actions.
+
+    """
+
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 35)
 
-    def wait_for_element(self, selector):
+    def click_the_element(self, selector, index):
+        """Performs the click function"""
+        self.wait_for_element(selector, index).click()
+
+    def wait_for_element(self, selector, index):
+        """Allows the page to load and find the element"""
+        if index >= 0:
+            return self.wait.until(ec.presence_of_all_elements_located(selector))[int(index)]
+        return self.wait.until(ec.presence_of_all_elements_located(selector))
+
+    def scrolling_the_page(self, y_coordinate):
         """
-        Wait for element to present
-        :param selector: locator of the element to find.
+        Scrolling page towards down.
+
         """
-        return self.wait.until(ec.element_to_be_clickable(selector))
+        self.driver.execute_script("window.scrollTo(0, " + str(y_coordinate) + ")")
 
     def presence_for_element(self, selector):
         """
@@ -30,6 +43,12 @@ class BaseClass(object):
         """
         return self.wait.until(ec.invisibility_of_element_located(selector))
 
+    def get_text(self, selector, index):
+        """
+        Returning the requested text
 
+        """
+        element = self.wait.until(ec.presence_of_all_elements_located(selector))[int(index)]
+        return element.text
 
 
