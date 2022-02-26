@@ -26,7 +26,7 @@ class AmazonCategory:
         self.methods.click_the_element(self.SECOND_PAGE, 0)
 
     def getting_the_second_page_text(self):
-        """"Returning the text of the Page 'Second' to be able to validate."""
+        """Returning the text of the Page 'Second' to be able to validate."""
 
         return self.methods.get_text(self.SELECTED_PAGE, 0)
 
