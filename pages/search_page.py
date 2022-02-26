@@ -19,11 +19,9 @@ class AmazonSearch:
 
     def texting_samsung_in_searchbar(self):
         """Text will be written in the Searchbar & Button will be clicked."""
-
         self.methods.wait_for_element(self.SEARCH_BOX, 0).send_keys(self.TEXT_TO_BE_SEARCHED)
         self.methods.click_the_element(self.SEARCH_BUTTON, 0)
 
     def searchbar_result(self):
         """Searched text will be checked on the page"""
-
         return self.methods.get_text(self.SAMSUNG_TEXT, 0)

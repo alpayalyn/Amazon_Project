@@ -33,7 +33,6 @@ class Setup:
 
     def home_page_loaded_successfully(self):
         """Driver has been started."""
-
         option = Options()
         option.add_argument("--disable-infobars")
         option.add_argument("start-maximized")

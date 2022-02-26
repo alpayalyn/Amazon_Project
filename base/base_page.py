@@ -25,7 +25,6 @@ class BaseClass(object):
     def scrolling_the_page(self, y_coordinate):
         """
         Scrolling page towards down.
-
         """
         self.driver.execute_script("window.scrollTo(0, " + str(y_coordinate) + ")")
 
@@ -46,7 +45,6 @@ class BaseClass(object):
     def get_text(self, selector, index):
         """
         Returning the requested text
-
         """
         element = self.wait.until(ec.presence_of_all_elements_located(selector))[int(index)]
         return element.text
