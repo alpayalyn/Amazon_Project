@@ -4,6 +4,7 @@ from base.base_page import BaseClass
 
 class AmazonProduct:
     """
+
         Get the text of third product
         Clicking the Add to List button on the product page.
         Clicking the Shopping List button on the Wishlist frame.

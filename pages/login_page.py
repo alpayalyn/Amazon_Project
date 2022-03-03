@@ -4,6 +4,7 @@ from base.base_page import BaseClass
 
 class AmazonLogin:
     """
+
         Logging into the account & filling the needed information.
 
     """

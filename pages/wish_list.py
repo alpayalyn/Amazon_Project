@@ -4,6 +4,7 @@ from base.base_page import BaseClass
 
 class AmazonWishlist:
     """
+
         Get the text of recently added item into the Shopping List.
         Deleting recently added item from the Shopping List.
         After deleting the item, getting 'Undo' text for assertion.

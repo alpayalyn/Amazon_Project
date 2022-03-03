@@ -30,8 +30,6 @@ class Setup:
 
     def __init__(self):
         self.wait = WebDriverWait(self.driver, 15)
-
-    def home_page_loaded_successfully(self):
         """Driver has been started."""
         option = Options()
         option.add_argument("--disable-infobars")

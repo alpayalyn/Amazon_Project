@@ -4,6 +4,7 @@ from base.base_page import BaseClass
 
 class AmazonSearch:
     """
+
         Website Search Page is for 'samsung' text to be searched in the search bar.
 
     """
