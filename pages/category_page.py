@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 class AmazonCategory:
     """
+
         Scrolling down on the page & navigating to second page on the category page.
         Returning the text of the Page 'Second' to be able to validate.
         Clicking the third item in the category page.

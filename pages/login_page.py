@@ -4,9 +4,11 @@ from base.base_page import BaseClass
 
 class AmazonLogin:
     """
+
         Logging into the account & filling the needed information.
 
     """
+
     EMAIL_DATA = 'alpaylui78@gmail.com'
     PASSWORD_DATA = '---'
     EMAIL = (By.ID, 'ap_email')

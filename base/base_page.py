@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 class BaseClass(object):
     """
+
         Functions in the Base page will be called by other pages to perform actions.
 
     """

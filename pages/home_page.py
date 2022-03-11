@@ -4,6 +4,7 @@ from base.base_page import BaseClass
 
 class AmazonHome:
     """
+
         Navigates users to the Login Screen.
 
     """

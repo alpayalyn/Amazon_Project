@@ -22,7 +22,6 @@ class TestRun(unittest.TestCase, Setup):
         Setup.__init__(self)
 
     def test_amazon(self):
-        self.home_page_loaded_successfully()
         assert self.url == self.driver.current_url, "URL ERROR"
         self.AmazonHome.navigating_to_login_page()
         self.AmazonLogin.login_into_account()
@@ -44,10 +43,8 @@ class TestRun(unittest.TestCase, Setup):
         assert "Undo" == text_control_wishlist_item_delete, "Item wasn't deleted successfully."
 
     def tearDown(self):
-        # To do the cleanup after test has executed.
         self.driver.close()
 
 
 if __name__ == '__main__':
-    # specify path where the HTML reports for testcase execution are to be generated
     unittest.main()
